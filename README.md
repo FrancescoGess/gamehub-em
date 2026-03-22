@@ -1,58 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🎮 GameHub
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+GameHub è una piattaforma web progettata per videogiocatori, che combina funzionalità di social network con strumenti di game tracking per titoli competitivi come Valorant e Call of Duty.
 
-## About Laravel
+L’obiettivo del progetto è creare una community dove gli utenti possono condividere contenuti, monitorare le proprie statistiche di gioco e interagire con altri player.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🚀 Tecnologie utilizzate
+Backend: Laravel (PHP)
+Frontend: Blade (Laravel templating)
+Database: MySQL (gestito tramite MAMP / phpMyAdmin)
+Autenticazione: Laravel Fortify
+Build tool: Vite
+Styling: Tailwind CSS (opzionale / in sviluppo)
+📌 Funzionalità principali
+👤 Autenticazione utenti
+Registrazione
+Login / Logout
+Recupero password
+Verifica email
+Autenticazione a due fattori (2FA)
+📰 Social Feed (in sviluppo)
+Creazione post
+Visualizzazione feed utenti
+Relazioni tra utenti e contenuti
+🎯 Game Tracker (in sviluppo)
+Collegamento account di gioco
+Monitoraggio statistiche (es. K/D, rank, match history)
+Supporto iniziale:
+Valorant
+Call of Duty
+🧠 Architettura del progetto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Il progetto utilizza un approccio MVC (Model-View-Controller):
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Models → gestione dati (User, Post, Game)
+Views (Blade) → rendering lato server
+Controllers → logica applicativa
 
-## Learning Laravel
+Database relazionale utilizzato per garantire:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+integrità dei dati
+gestione delle relazioni (es. utenti → post → giochi)
+⚙️ Installazione
+1. Clona il repository
+git clone https://github.com/FrancescoGess/gamehub.git
+cd gamehub
+2. Installa le dipendenze
+composer install
+npm install
+3. Configura l’ambiente
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Copia il file .env:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+cp .env.example .env
 
-## Agentic Development
+Configura il database:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+DB_DATABASE=gamehub
+DB_USERNAME=root
+DB_PASSWORD=root
+DB_PORT=8889
+4. Genera la chiave
+php artisan key:generate
+5. Migrazioni database
+php artisan migrate
+6. Avvia il progetto
+php artisan serve
+npm run dev
 
-```bash
-composer require laravel/boost --dev
+Visita:
 
-php artisan boost:install
-```
+http://127.0.0.1:8000
+🧹 Struttura principale
+app/
+ ├── Models/
+ ├── Http/
+ │   ├── Controllers/
+ │   └── Middleware/
+resources/
+ ├── views/ (Blade)
+routes/
+ └── web.php
+database/
+ └── migrations/
+🔧 Stato del progetto
+Feature	Stato
+Autenticazione	✅ Completa
+Blade UI	✅ Completa
+Social system	🚧 In sviluppo
+Game tracker	🚧 In sviluppo
+🎯 Roadmap
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Sistema post completo
 
-## Contributing
+API per integrazione giochi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Profilo utente avanzato
 
-## Code of Conduct
+Sistema follow/amici
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+UI migliorata (Tailwind completo)
 
-## Security Vulnerabilities
+Notifiche in tempo reale
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+🤝 Contributi
 
-## License
+I contributi sono benvenuti!
+Apri una issue o una pull request per proporre miglioramenti.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+📄 Licenza
+
+Questo progetto è open-source e distribuito sotto licenza MIT.
+
+👨‍💻 Autore
+
+Sviluppato da GessLab
+Progetto personale per apprendimento e sviluppo full-stack.
