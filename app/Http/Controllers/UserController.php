@@ -11,9 +11,4 @@ class UserController extends Controller
         $calcolo = 2 + 2;
         return $calcolo;
     }
-     function calcoloData(Request $request)
-    {
-        $data ='Inserisci un numero';
-        return 'Data ricevuti:' . $request->input('numero') . ' ' . $data;
-    }
 }
