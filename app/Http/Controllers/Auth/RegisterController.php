@@ -31,7 +31,10 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return back();
+        return view('login', [
+            'pageTitle' => 'Home',
+            'metaTitle' => 'Home Gamehub',
+        ]);
     }
 
     /**
